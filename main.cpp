@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
            filename = argv[1];
            Bitmap image;
            image.open(filename);
-           if (image.isImage()) 
+           if (image.isImage() == 24) 
            {
                   vector<vector<Pixel> >imagePixels = image.toPixelMatrix();
 
