@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
                                         Pixel color = imagePixels[row][col];
                                         color.green = 0;
                                         color.blue = 0;
-                                        color.red = 255;
+                                        imagePixels[row][col] = color;
                                 }
                         }
 
