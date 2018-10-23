@@ -14,15 +14,28 @@ int main(int argc, char* argv[])
            filename = argv[1];
            Bitmap image;
            image.open(filename);
+           vector<vector<Pixel> >imagePixels = image.toPixelMatrix();
+
            if (image.isImage() == 24) 
            {
-                  vector<vector<Pixel> >imagePixels = image.toPixelMatrix();
-
                   cout<<filename<<" is "<<imagePixels.size()<<" pixels high and "<<imagePixels[0].size()<<" pixels wide\n";
 
            } else {
                    cout<<"Image file must be a bitmap with 24-bit color depth.\n";
            }
+
+           for(int row = 0; row < imagePixels.size(); row++)
+           {
+                   for(int col = 0; col <imagePixels[0].size(); col++)
+                   {
+                           Pixel color = imagePixels[row][col];
+                           color.green = 0;
+                           color.blue = 0;
+                   }
+           }
+
+           image.fromPixelMatrix(imagePixels);
+           image.save("redness.bmp");
 
 
         } else { 
