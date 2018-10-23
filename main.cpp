@@ -22,11 +22,12 @@ int main(int argc, char* argv[])
                         cout<<filename<<" is "<<imagePixels.size()<<" pixels high and "<<imagePixels[0].size()<<" pixels wide\n";
                         for(int row = 0; row < imagePixels.size(); row++)
                         {
-                                for(int col = 0; col <imagePixels[0].size(); col++)
+                                for(int col = 0; col < imagePixels[0].size(); col++)
                                 {
                                         Pixel color = imagePixels[row][col];
                                         color.green = 0;
                                         color.blue = 0;
+                                        color.red = 255;
                                 }
                         }
 
